@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Asmaq",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 120,
+      "left": -130,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 50, "left": 150, "attrs": { "color": "red" } },
+    { "type": "wokwi-buzzer", "id": "buzz1", "top": -80, "left": 160, "attrs": {} }
+  ],
+  "connections": [
+    [ "btn1:1.r", "esp:21", "green", [] ],
+    [ "btn1:2.r", "esp:GND.1", "green", [] ],
+    [ "led1:A", "esp:4", "green", [] ],
+    [ "led1:C", "esp:GND.2", "green", [] ],
+    [ "buzz1:1", "esp:18", "green", [] ],
+    [ "buzz1:2", "esp:GND.3", "green", [] ]
+  ]
+}

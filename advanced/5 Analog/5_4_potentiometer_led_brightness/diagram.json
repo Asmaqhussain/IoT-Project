@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "author": "asmaq",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": 140,
+      "left": 300,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 20,
+      "left": 320,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 90,
+      "left": 320,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "pot1:SIG", "esp:D34", "green", [ "h-60", "v-180", "h-420" ] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "h-30", "v20", "h-260" ] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "h-90", "v40", "h-210" ] ],
+
+    [ "esp:D2", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "led1:A", "green", [ "v0" ] ],
+    [ "led1:C", "esp:GND.2", "black", [ "v0" ] ]
+  ]
+}

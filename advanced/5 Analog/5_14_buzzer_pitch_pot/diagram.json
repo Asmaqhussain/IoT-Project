@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "asmaq",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -9.6, "left": -62.36, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 56.3, "left": 95.8, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 69.6,
+      "left": 193.8,
+      "attrs": { "volume": "1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "v-38.4", "h-87.2" ] ],
+    [ "pot1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "pot1:SIG", "esp:34", "green", [ "v-9.6", "h-77.2" ] ],
+    [ "bz1:1", "esp:5", "green", [ "v-9.6", "h-163.2" ] ],
+    [ "bz1:2", "esp:GND.1", "black", [ "v19.2", "h-163.6" ] ]
+  ],
+  "dependencies": {}
+}
